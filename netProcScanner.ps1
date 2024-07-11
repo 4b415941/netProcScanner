@@ -74,7 +74,7 @@ foreach ($process in $processes) {
         $hash = Get-FileHash -Algorithm SHA256 -Path $process
         Log-Message "Hash for $($process): $($hash.Hash)"
     } catch {
-        Log-Message "An error occurred while retrieving the file hash for $process: $_"
+        Log-Message "An error occurred while retrieving the file hash for $($process): $_"
         continue
     }
 
@@ -91,7 +91,7 @@ foreach ($process in $processes) {
             Log-Message "File $process ($($hash.Hash)) is clean."
         }
     } catch {
-        Log-Message "An error occurred during VirusTotal Query for $process: $_"
+        Log-Message "An error occurred during VirusTotal Query for $($process): $_"
     }
 }
 
