@@ -72,7 +72,7 @@ foreach ($process in $processes) {
     # Get File Hash
     try {
         $hash = Get-FileHash -Algorithm SHA256 -Path $process
-        Log-Message "Hash for $process: $($hash.Hash)"
+        Log-Message "Hash for $($process): $($hash.Hash)"
     } catch {
         Log-Message "An error occurred while retrieving the file hash for $process: $_"
         continue
